@@ -1,0 +1,143 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lexend+Deca:wght@100..900&display=swap");
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+:root {
+	--primary-color: hsl(233, 47%, 7%);
+	--secondary-color: hsl(244, 38%, 16%);
+	--accent-color: hsl(277, 64%, 61%);
+	--third-color: hsl(0, 0%, 100%);
+	--fourth-color: hsla(0, 0%, 100%, 0.75);
+	--fifth-color: hsla(0, 0%, 100%, 0.6);
+	font-family: inter, sans-serif;
+}
+
+body {
+	min-height: 100vh;
+	background-color: var(--primary-color);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.container {
+	max-width: 1020px;
+}
+
+.wrapper {
+	background-color: var(--secondary-color);
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+	border-radius: 15px;
+	overflow: hidden;
+	margin: 2rem;
+}
+
+.img-container img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.img-container {
+	position: relative;
+}
+
+@media (max-width: 763px) {
+	.text-area {
+		order: 2;
+		text-align: center;
+	}
+    .counter-container-card h3{
+        font-size: 22px;
+
+
+    }
+
+.img-container {
+	order: 1;
+}
+
+.counter-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 30px;
+}
+.counter-container-card {
+	text-align: center;
+}
+}
+
+
+
+@media (max-width: 440px) {
+	.wrapper {
+		grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+	}
+}
+
+.img-container::after {
+	position: absolute;
+	content: "";
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background-color: var(--accent-color);
+	opacity: 0.6;
+}
+
+.text-area {
+	padding: 10%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.tittle {
+	color: var(--third-color);
+	font-weight: 700;
+	font-size: clamp(26px, 6vw, 2rem);
+}
+
+.tittle span {
+	color: var(--accent-color);
+}
+
+.subtitle {
+	color: var(--fourth-color);
+	margin-top: 20px;
+	margin-bottom: 40px;
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 1.7em;
+}
+
+.counter-container {
+	display: flex;
+	text-align: start;
+	justify-content: space-between;
+}
+
+h3 {
+	font-weight: 700;
+	color: var(--third-color);
+}
+
+.counter-container-card {
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+}
+
+.counter-container-card p {
+	color: var(--fifth-color);
+	text-transform: uppercase;
+	font-size: 10px;
+	letter-spacing: 0.1em;
+}
